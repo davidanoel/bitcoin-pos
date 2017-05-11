@@ -1,0 +1,17 @@
+<h1>Simple.Pay.</h1>
+<h2>Invoice</h2>
+<form novalidate (ngSubmit)="onSubmit(product)" [formGroup]="product" #f="ngForm">
+    <div class="row form-group">
+        <div class="col-sm-2">
+            <input class="form-control" type="text" placeholder="Amount in BTC" formControlName="amount" />
+            <span class="error" *ngIf="product.get('amount').touched && product.get('amount').hasError('required')">
+                Amount is required
+            </span>
+        </div>
+        <button type="submit" [disabled]="product.invalid" class="btn btn-primary">Generate Invoice</button>
+    </div>
+</form>
+<br />
+<div>
+    <invoice [btcamount]="amount" [hidden]="f.invalid || !valid"></invoice>
+</div>

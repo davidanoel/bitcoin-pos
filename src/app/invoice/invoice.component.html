@@ -1,0 +1,12 @@
+<h2>Pay</h2>
+<div>
+    <qr-code [value]="qrcode" [size]="150"></qr-code>
+</div>
+<p>Please send {{amount}} BTC to {{address}}</p>
+<h2>Transactions Received</h2>
+<ul>
+    <li *ngIf="transaction.txid">
+        <pre style="background-color:lightgreen;padding:5.5px;border:0;">{{ transaction.txid }} </pre>
+    </li>
+</ul>
+<h4><a [routerLink]="['/']">View all transactions</a></h4>

@@ -1,0 +1,18 @@
+﻿<div class="row">
+    <h1>Hi {{currentUser.firstName}}!</h1>
+    <p>You're logged in!! <a [routerLink]="['/login']">Logout</a></p>
+    <h2><a [routerLink]="['/generate-invoice']">Generate Invoice</a></h2>
+    <h2>Transactions:</h2>
+    <div class="row">
+        <div class="col-sm-2" style="font-weight:600;color:#337ab7;text-transform:uppercase;">First Name</div>
+        <div class="col-sm-2" style="font-weight:600;color:#337ab7;text-transform:uppercase;">Last Name</div>
+        <div class="col-sm-4" style="font-weight:600;color:#337ab7;text-transform:uppercase;">Address</div>
+        <div class="col-sm-4" style="font-weight:600;color:#337ab7;text-transform:uppercase;">Transaction Id</div>
+    </div>
+    <div *ngFor="let txn of transactions" class="row">
+        <div class="col-sm-2">{{currentUser.firstName}}</div>
+        <div class="col-sm-2">{{currentUser.lastName}}</div>
+        <div class="col-sm-4">{{txn.address}}</div>
+        <div class="col-sm-4">{{txn.txid}}</div>
+    </div>
+</div>
