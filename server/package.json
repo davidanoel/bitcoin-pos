@@ -4,7 +4,7 @@
   "description": "Server for a simple bitcoin pos system.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atlanticstarr1/bitcoinpos.git"
+    "url": "https://github.com/atlanticstarr1/bitcoin-pos.git"
   },
   "dependencies": {
     "bcryptjs": "^2.1.0",
